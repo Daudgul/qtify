@@ -6,3 +6,7 @@ body {
   background-color: #121212 !important;
   color: #ffff !important;
 }
+input::placeholder {
+  color: black !important; /* Replace with your desired color */
+  opacity: 1; /* Ensure full opacity */
+}
