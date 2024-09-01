@@ -34,7 +34,13 @@ function Footer() {
           sx={{
             border: "1px solid white",
             overflow: "hidden",
-            width: "1145px",
+            width: {
+              xs: "250px", // Full width on extra-small screens (mobile)
+              sm: "400px", // 80% width on small screens
+              md: "600px", // 60% width on medium screens
+              lg: "1000px", // 50% width on large screens
+              xl: '"1145px"', // 40% width on extra-large screens
+            },
           }}
           style={{ borderRadius: "10px" }}
         >
@@ -73,7 +79,13 @@ function Footer() {
           sx={{
             border: "1px solid white",
             overflow: "hidden",
-            width: "1145px",
+            width: {
+              xs: "250px", // Full width on extra-small screens (mobile)
+              sm: "400px", // 80% width on small screens
+              md: "600px", // 60% width on medium screens
+              lg: "1000px", // 50% width on large screens
+              xl: '"1145px"', // 40% width on extra-large screens
+            },
           }}
           style={{ borderRadius: "10px" }}
         >

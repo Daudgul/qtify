@@ -10,3 +10,14 @@ input::placeholder {
   color: black !important; /* Replace with your desired color */
   opacity: 1; /* Ensure full opacity */
 }
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  padding: 10px;
+  background-color: #34c94b;
+  border-radius: 50%;
+  font-weight: bolder;
+}
+.swiper-scrollbar-drag {
+  display: none;
+}
