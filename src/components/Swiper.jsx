@@ -30,7 +30,7 @@ const CardSwiper = ({ data = [], album = false }) => {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
       breakpoints={{
-        400: {
+        350: {
           slidesPerView: 2,
           //   spaceBetween: 20,
         },

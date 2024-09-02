@@ -18,6 +18,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import Backdrop from "@mui/material/Backdrop";
 import Modal from "@mui/material/Modal";
 import { Height } from "@mui/icons-material";
+import FeedbackButton from "./FeedbackButton";
 
 const options = [
   "JavaScript",
@@ -90,22 +91,7 @@ function ResponsiveAppBar() {
               )}
             />{" "}
           </Box>
-          <Box>
-            <Button variant="contained" color="secondary" onClick={handleOpen}>
-              {" "}
-              <span
-                style={{
-                  color: "#34c94b",
-                  textTransform: "capitalize",
-                  fontWeight: "600",
-                  fontSize: "18px",
-                }}
-              >
-                {" "}
-                Give feedback
-              </span>
-            </Button>
-          </Box>
+          <FeedbackButton handleOpen={handleOpen} />
         </Toolbar>
         <CustomModal
           open={open}

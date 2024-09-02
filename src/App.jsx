@@ -9,6 +9,7 @@ import { Box } from "@mui/material";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import AlbumsSongs from "./components/AlbumsSongs";
+import Img from "./assets/songs-poster.png";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -31,7 +32,21 @@ function App() {
               "0 -4px 6px rgba(128, 128, 128, 0.8), 0 4px 6px rgba(128, 128, 128, 0.8)",
           }}
         />
-        <Box>
+        <Box
+          display={"flex"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          sx={{ py: "30px", backgroundColor: "black" }}
+        >
+          <img
+            src={Img}
+            alt="Song Poster"
+            style={{ width: "77px", height: "82px", borderRadius: "10px" }}
+          />
+          <Box width={"160px"} mx={"12px"} lineHeight={"8px"}>
+            <h4>Song name</h4>
+            <p style={{ fontSize: "12px" }}>Album name</p>
+          </Box>
           <AudioPlayer
             // autoPlay
             src="http://example.com/audio.mp3"
@@ -39,7 +54,6 @@ function App() {
               backgroundColor: "black", // Set background color to black
               color: "white", // Set text color to white
               padding: "20px",
-              marginTop: "30px",
             }}
             className="custom-audio-player"
             showLoopControl={false} // Remove loop button
