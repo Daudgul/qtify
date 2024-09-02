@@ -141,7 +141,6 @@ function CustomModal({ open, handleClose, handleOpen }) {
       description: "",
     });
     handleClose();
-    console.log(formData); // Handle form submission (e.g., send data to an API)
   };
   return (
     <>

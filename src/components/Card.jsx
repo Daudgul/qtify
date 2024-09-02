@@ -10,7 +10,6 @@ function Card({
   data,
 }) {
   const navigate = useNavigate();
-  console.log(data, "data", album);
 
   const handleClick = () => {
     if (album) {

@@ -9,7 +9,6 @@ function AllTabs({ songs = [] }) {
   const handleTabChange = (event, newValue) => {
     setSelectedTab(newValue);
   };
-  console.log(songs, "this is ");
 
   const renderTabContent = () => {
     switch (selectedTab) {

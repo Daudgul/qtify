@@ -13,7 +13,6 @@ function AlbumsSongs() {
   const location = useLocation();
   const navigation = useNavigate();
   const { albumData } = location.state || {};
-  console.log(albumData, "albumData");
   const pStyle = {
     fontSize: "16px",
     fontWeight: "400",
