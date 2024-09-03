@@ -6,8 +6,6 @@ import Logo from "./Logo/Logo";
 import Button from "./Button/Button";
 
 function ResponsiveAppBar({ allAlbums }) {
-  console.log(allAlbums, "dkfdkfndn");
-
   return (
     <nav className="navbar">
       <Link to="/">

@@ -28,6 +28,7 @@
   padding: 15px;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .albumTitle {
