@@ -95,9 +95,9 @@ function Search({ searchData, placeholder }) {
     <div style={{ position: "relative" }}>
       <form
         className={styles.wrapper}
-        onSubmit={(e) => {
-          onSubmit(e, value);
-        }}
+        // onSubmit={(e) => {
+        //   onSubmit(e, value);
+        // }}
       >
         <div>
           <input
