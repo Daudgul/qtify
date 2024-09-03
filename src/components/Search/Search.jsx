@@ -6,7 +6,7 @@ import { styled } from "@mui/system";
 // import { truncate } from "../../helpers/helpers";
 import { useNavigate } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
-import { Tooltip } from "@mui/material";
+import { Box, Tooltip } from "@mui/material";
 
 const Listbox = styled("ul")(({ theme }) => ({
   width: "100%",
@@ -116,7 +116,7 @@ function Search({ searchData, placeholder }) {
           </button>
         </div>
       </form>
-      {filteredOptions.length > 0 && (
+      {inputValue.length > 0 && (
         <Listbox>
           {filteredOptions.map((option, index) => {
             const artists = option.songs.reduce((accumulator, currentValue) => {
@@ -132,15 +132,48 @@ function Search({ searchData, placeholder }) {
                 }`}
                 onClick={() => handleSelectOption(option)}
               >
-                <div>
-                  <p className={styles.albumTitle}>{option.title}</p>
-                  <p className={styles.albumArtists}>
-                    {truncate(artists.join(", "), 40)}
-                  </p>
-                </div>
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    width: "100%",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",
+                    }}
+                  >
+                    <img
+                      src={option.image}
+                      width={66}
+                      height={71}
+                      alt="Album image"
+                      style={{
+                        borderRadius: "10px",
+                        boxShadow: "6px -3px 8px rgba(255, 255, 255, 0.5)",
+                      }}
+                    />
+                    <div>
+                      <p className={styles.albumTitle}>{option.title}</p>
+                      <p className={styles.albumArtists}>
+                        {truncate(artists.join(", "), 40)}
+                      </p>
+                    </div>
+                  </Box>
+                  <p className={styles.albumTitle}>{option.follows} Follows</p>
+                </Box>
               </li>
             );
           })}
+          {filteredOptions.length < 1 && (
+            <li className={styles.listElement}>
+              <p className={styles.albumTitle}>No Album found</p>
+            </li>
+          )}
         </Listbox>
       )}
     </div>
