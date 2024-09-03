@@ -113,3 +113,34 @@ function Search({ searchData, placeholder }) {
 }
 
 export default Search;
+
+{
+  /* <Box>
+            {" "}
+            <Autocomplete
+              freeSolo
+              options={options}
+              inputValue={value}
+              onInputChange={(event, newValue) => {
+                setValue(newValue);
+              }}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  variant="outlined"
+                  placeholder="Search..."
+                  InputProps={{
+                    ...params.InputProps,
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <Box borderLeft={"1px solid black"}>
+                          <SearchIcon />
+                        </Box>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              )}
+            />{" "}
+          </Box> */
+}
