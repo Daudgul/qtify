@@ -13,13 +13,14 @@ import Img from "./assets/songs-poster.png";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [allAlbums, setAllAlbums] = useState([]);
 
   return (
     <>
-      <ResponsiveAppBar />
+      <ResponsiveAppBar allAlbums={allAlbums} />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/album" element={<AlbumsSongs />} />
+        <Route path="/" element={<Home setAllAlbums={setAllAlbums} />} />
+        <Route path="/album/:id" element={<AlbumsSongs />} />
       </Routes>
       <footer>
         <hr

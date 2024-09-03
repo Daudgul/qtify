@@ -8,7 +8,8 @@ import Albums from "./Albums";
 import AllTabs from "./Tabs";
 import Headeer from "./Headeer";
 import Footer from "./Footer";
-function Home() {
+import Search from "./Search/Search";
+function Home({ setAllAlbums }) {
   const [topAlbums, setTopAlbums] = useState([]);
   const [newAlbums, setNewAlbums] = useState([]);
   const [allSongs, setAllSongs] = useState([]);
@@ -26,6 +27,7 @@ function Home() {
       // Update state with both responses
       setTopAlbums(topResponse.data);
       setNewAlbums(newResponse.data);
+      setAllAlbums([...topResponse.data, ...newResponse.data]);
       setAllSongs(allResponse.data);
     } catch (error) {
       console.error("Error fetching albums:", error);
@@ -53,7 +55,8 @@ function Home() {
 
   return (
     <main>
-      <Headeer />
+      <Headeer data={topAlbums} />
+      {/* <Search placeholder="Search a song of your choice" searchData={topAlbums} /> */}
       <Box display={"flex"} flexDirection={"column"} gap={3}>
         <Albums title="Top Albums" data={topAlbums} />
         <Albums title="New Albums" data={newAlbums} />

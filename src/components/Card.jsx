@@ -11,11 +11,16 @@ function Card({
 }) {
   const navigate = useNavigate();
 
+  let decodedString = decodeURIComponent(name);
+  let lowercaseString = decodedString.toLowerCase();
+  let result = lowercaseString.replace(/\s+/g, "-");
+
   const handleClick = () => {
     if (album) {
-      navigate("/album", { state: { albumData: data } });
+      navigate(`/album/${result}`, { state: { albumData: data } });
     }
   };
+
   return (
     <Box
       width={"159px"}

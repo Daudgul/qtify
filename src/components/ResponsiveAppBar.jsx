@@ -19,6 +19,8 @@ import Backdrop from "@mui/material/Backdrop";
 import Modal from "@mui/material/Modal";
 import { Height } from "@mui/icons-material";
 import FeedbackButton from "./FeedbackButton";
+import { Link } from "react-router-dom";
+import Search from "./Search/Search";
 
 const options = [
   "JavaScript",
@@ -29,11 +31,13 @@ const options = [
   "GraphQL",
 ];
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar({ allAlbums }) {
   const [value, setValue] = React.useState("");
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  console.log(allAlbums, "dkfdkfndn");
 
   return (
     <AppBar position="static">
@@ -46,24 +50,14 @@ function ResponsiveAppBar() {
             alignItems: "center",
           }}
         >
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            // href="#app-bar-with-responsive-menu"
-            // sx={{
-            //   mr: 2,
-            //   display: { xs: "none", md: "flex" },
-            //   fontFamily: "monospace",
-            //   fontWeight: 700,
-            //   letterSpacing: ".3rem",
-            //   color: "inherit",
-            //   textDecoration: "none",
-            // }}
-          >
-            <img src={logoImg} alt="App logo image" />
-          </Typography>
-          <Box>
+          <Link to="/">
+            <img src={logoImg} alt="logo" width={67} />
+          </Link>
+          <Search
+            placeholder="Search a song of your choice"
+            searchData={allAlbums}
+          />
+          {/* <Box>
             {" "}
             <Autocomplete
               freeSolo
@@ -90,7 +84,7 @@ function ResponsiveAppBar() {
                 />
               )}
             />{" "}
-          </Box>
+          </Box> */}
           <FeedbackButton handleOpen={handleOpen} />
         </Toolbar>
         <CustomModal
